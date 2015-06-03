@@ -12,4 +12,20 @@ end
 #puts canonical("ROMA")
 #puts canonical("AMOR")
 
-puts are_anagrams?("ROMA", "AMORe") == true
+# puts are_anagrams?("ROMA", "AMORe") == true
+
+# METODO QUE RECIBE UNA PALABRA Y BUSCA EN UN DICCIONARIO SI TIENE ANAGRAMAS
+def anagrams_for(word, word_array)
+	palabras = []
+	word_array.each do |wrd|
+		if are_anagrams?(word, wrd) == true
+			palabras << wrd
+		end
+	end
+	palabras
+end
+
+word = "ROMA"
+array = ["AMOR", "HOME", "ROMA", "OMAR", "MORA", "RAMO", "ARMO", "MARO", "CASA", "CODE"]
+
+puts anagrams_for(word, array)
